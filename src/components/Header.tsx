@@ -16,7 +16,7 @@
 //   Menu,
 //   MenuItem,
 // } from '@mui/material';
-// import { Link as RouterLink } from 'react-router-dom';
+// import { Link as RouterLink, useLocation } from 'react-router-dom';
 // import { motion, AnimatePresence } from 'framer-motion';
 // import LanguageIcon from '@mui/icons-material/Language';
 // import MenuIcon from '@mui/icons-material/Menu';
@@ -28,6 +28,7 @@
 //   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 //   const [drawerOpen, setDrawerOpen] = useState(false);
 //   const [languageAnchorEl, setLanguageAnchorEl] = useState<null | HTMLElement>(null);
+//   const location = useLocation();
 
 //   const navItems = [
 //     { label: t('nav.home'), to: '/' },
@@ -57,7 +58,15 @@
 //         {navItems.map((item) => (
 //           <ListItem key={item.to} disablePadding>
 //             <ListItemButton component={RouterLink} to={item.to}>
-//               <ListItemText primary={item.label} />
+//               <ListItemText
+//                 primary={item.label}
+//                 primaryTypographyProps={{
+//                   sx: {
+//                     color: location.pathname === item.to ? 'primary.main' : 'inherit',
+//                     fontWeight: location.pathname === item.to ? 'bold' : 'normal',
+//                   },
+//                 }}
+//               />
 //             </ListItemButton>
 //           </ListItem>
 //         ))}
@@ -127,7 +136,16 @@
 //                 }}
 //               >
 //                 {navItems.map((item) => (
-//                   <Button key={item.to} color="inherit" component={RouterLink} to={item.to}>
+//                   <Button
+//                     key={item.to}
+//                     color="inherit"
+//                     component={RouterLink}
+//                     to={item.to}
+//                     sx={{
+//                       fontWeight: location.pathname === item.to ? 'bold' : 'normal',
+//                       color: location.pathname === item.to ? 'gold' : 'inherit',
+//                     }}
+//                   >
 //                     {item.label}
 //                   </Button>
 //                 ))}
@@ -176,9 +194,7 @@
 
 // export default Header;
 
-
-
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import {
   AppBar,
   Toolbar,
@@ -195,26 +211,28 @@ import {
   useMediaQuery,
   Menu,
   MenuItem,
-} from '@mui/material';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import LanguageIcon from '@mui/icons-material/Language';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
+} from "@mui/material";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import LanguageIcon from "@mui/icons-material/Language";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [languageAnchorEl, setLanguageAnchorEl] = useState<null | HTMLElement>(null);
+  const [languageAnchorEl, setLanguageAnchorEl] = useState<null | HTMLElement>(
+    null
+  );
   const location = useLocation();
 
   const navItems = [
-    { label: t('nav.home'), to: '/' },
-    { label: t('nav.about'), to: '/about' },
-    { label: t('nav.products'), to: '/products' },
-    { label: t('nav.contact'), to: '/contact' },
+    { label: t("nav.home"), to: "/" },
+    { label: t("nav.about"), to: "/about" },
+    { label: t("nav.products"), to: "/products" },
+    { label: t("nav.contact"), to: "/contact" },
   ];
 
   const toggleDrawer = (open: boolean) => () => setDrawerOpen(open);
@@ -242,8 +260,12 @@ const Header = () => {
                 primary={item.label}
                 primaryTypographyProps={{
                   sx: {
-                    color: location.pathname === item.to ? 'primary.main' : 'inherit',
-                    fontWeight: location.pathname === item.to ? 'bold' : 'normal',
+                    color:
+                      location.pathname === item.to
+                        ? "primary.main"
+                        : "inherit",
+                    fontWeight:
+                      location.pathname === item.to ? "bold" : "normal",
                   },
                 }}
               />
@@ -261,21 +283,32 @@ const Header = () => {
       transition={{ duration: 0.5 }}
     >
       <AppBar position="static">
-        <Toolbar sx={{ position: 'relative', justifyContent: 'space-between' }}>
+        <Toolbar sx={{ position: "relative", justifyContent: "space-between" }}>
           {isMobile ? (
             <>
               {/* Mobile: Hamburger left */}
-              <IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
                 <MenuIcon />
               </IconButton>
 
               {/* Mobile: Logo centered */}
-              <Box sx={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)' }}>
+              <Box
+                sx={{
+                  position: "absolute",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                }}
+              >
                 <RouterLink to="/">
                   <img
                     src="https://placehold.co/100x50?text=Logo&font=montserrat"
                     alt="Logo"
-                    style={{ height: '40px' }}
+                    style={{ height: "40px" }}
                   />
                 </RouterLink>
               </Box>
@@ -287,31 +320,34 @@ const Header = () => {
             </>
           ) : (
             <>
-              {/* Desktop: Logo + Name left */}
-              <motion.div
+
+              <Box
                 component={RouterLink}
                 to="/"
-                style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', color: 'inherit' }}
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.2 }}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  textDecoration: "none",
+                  color: "inherit",
+                }}
               >
                 <img
                   src="https://placehold.co/100x50?text=Nature+Logo&font=montserrat"
                   alt="Nature Products Logo"
-                  style={{ height: '40px', marginRight: '8px' }}
+                  style={{ height: "40px", marginRight: "8px" }}
                 />
                 <Typography variant="h6" component="div">
                   Nature Products
                 </Typography>
-              </motion.div>
+              </Box>
 
               {/* Desktop: Nav buttons centered */}
               <Box
                 sx={{
-                  position: 'absolute',
-                  left: '50%',
-                  transform: 'translateX(-50%)',
-                  display: 'flex',
+                  position: "absolute",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  display: "flex",
                   gap: 2,
                 }}
               >
@@ -322,8 +358,9 @@ const Header = () => {
                     component={RouterLink}
                     to={item.to}
                     sx={{
-                      fontWeight: location.pathname === item.to ? 'bold' : 'normal',
-                      color: location.pathname === item.to ? 'gold' : 'inherit',
+                      fontWeight:
+                        location.pathname === item.to ? "bold" : "normal",
+                      color: location.pathname === item.to ? "gold" : "inherit",
                     }}
                   >
                     {item.label}
@@ -333,7 +370,11 @@ const Header = () => {
 
               {/* Desktop: Language button with text right */}
               <Box>
-                <Button color="inherit" onClick={handleLanguageClick} startIcon={<LanguageIcon />}>
+                <Button
+                  color="inherit"
+                  onClick={handleLanguageClick}
+                  startIcon={<LanguageIcon />}
+                >
                   {i18n.language.toUpperCase()}
                 </Button>
               </Box>
@@ -346,9 +387,9 @@ const Header = () => {
             open={Boolean(languageAnchorEl)}
             onClose={handleLanguageClose}
           >
-            <MenuItem onClick={() => changeLanguage('en')}>English</MenuItem>
-            <MenuItem onClick={() => changeLanguage('de')}>Deutsch</MenuItem>
-            <MenuItem onClick={() => changeLanguage('ja')}>日本語</MenuItem>
+            <MenuItem onClick={() => changeLanguage("en")}>English</MenuItem>
+            <MenuItem onClick={() => changeLanguage("de")}>Deutsch</MenuItem>
+            <MenuItem onClick={() => changeLanguage("ja")}>日本語</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
@@ -358,9 +399,9 @@ const Header = () => {
         {isMobile && drawerOpen && (
           <Drawer anchor="left" open={drawerOpen} onClose={toggleDrawer(false)}>
             <motion.div
-              initial={{ x: '-100%' }}
+              initial={{ x: "-100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '-100%' }}
+              exit={{ x: "-100%" }}
               transition={{ duration: 0.3 }}
             >
               {drawerContent}

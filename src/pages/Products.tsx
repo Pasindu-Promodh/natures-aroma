@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import {
   Typography,
   Box,
-  Grid,
   Card,
   CardContent,
   CardMedia,

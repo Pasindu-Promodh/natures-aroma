@@ -16,7 +16,7 @@ const Contact = () => {
           <Typography variant="h3" gutterBottom>
             {t('contact.title')}
           </Typography>
-          <img src="https://placehold.co/600x400?text=Contact+Us&font=poppins" alt="Contact Us" style={{ width: '100%', borderRadius: '8px', mb: 2 }} />
+          <img src="https://placehold.co/600x400?text=Contact+Us&font=poppins" alt="Contact Us" style={{ width: '100%', borderRadius: '8px'}} />
           <form noValidate autoComplete="off">
             <TextField fullWidth label={t('contact.name')} variant="outlined" sx={{ mb: 2 }} />
             <TextField fullWidth label={t('contact.email')} variant="outlined" sx={{ mb: 2 }} />
