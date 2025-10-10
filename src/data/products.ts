@@ -24,7 +24,7 @@ export const getProducts = (): Product[] => [
     },
     price: 9.99,
     inStock: true,
-    image: "/nature-products/media/blue_butterfly_pea_tea.png",
+    image: "/natures-aroma-secrets/media/blue_butterfly_pea_tea.png",
     type: "type1",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
@@ -48,7 +48,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/chai_tea_2.jpg",
+    image: "/natures-aroma-secrets/media/chai_tea_2.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -72,7 +72,7 @@ export const getProducts = (): Product[] => [
     },
     price: 9.99,
     inStock: true,
-    image: "/nature-products/media/chicken_curry_paste_2.jpg",
+    image: "/natures-aroma-secrets/media/chicken_curry_paste_2.jpg",
     type: "type1",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
@@ -96,7 +96,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/fish_curry_paste_2.jpg",
+    image: "/natures-aroma-secrets/media/fish_curry_paste_2.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -120,7 +120,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/ginger_tea_2.jpg",
+    image: "/natures-aroma-secrets/media/ginger_tea_2.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -144,7 +144,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/herbal_hair_oil_3.jpg",
+    image: "/natures-aroma-secrets/media/herbal_hair_oil_3.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -168,7 +168,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/mango_leaf_tea_2.png",
+    image: "/natures-aroma-secrets/media/mango_leaf_tea_2.png",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -192,7 +192,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/rasam_2.jpg",
+    image: "/natures-aroma-secrets/media/rasam_2.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -216,7 +216,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/nature-products/media/sesame_oil_2.png",
+    image: "/natures-aroma-secrets/media/sesame_oil_2.png",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
