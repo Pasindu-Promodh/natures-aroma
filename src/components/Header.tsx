@@ -21,6 +21,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
+import logo from "/nature-products/media/logo.png";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -34,8 +35,8 @@ const Header = () => {
 
   const navItems = [
     { label: t("nav.home"), to: "/" },
-    { label: t("nav.about"), to: "/about" },
     { label: t("nav.products"), to: "/products" },
+    { label: t("nav.about"), to: "/about" },
     { label: t("nav.contact"), to: "/contact" },
   ];
 
@@ -110,7 +111,7 @@ const Header = () => {
               >
                 <RouterLink to="/">
                   <img
-                    src="https://placehold.co/100x50?text=Logo&font=montserrat"
+                    src={logo}
                     alt="Logo"
                     style={{ height: "40px" }}
                   />
@@ -136,12 +137,12 @@ const Header = () => {
                 }}
               >
                 <img
-                  src="https://placehold.co/100x50?text=Nature+Logo&font=montserrat"
+                  src={logo}
                   alt="Nature Products Logo"
                   style={{ height: "40px", marginRight: "8px" }}
                 />
                 <Typography variant="h6" component="div">
-                  Nature Products
+                  Nature's Aroma Secrets
                 </Typography>
               </Box>
 

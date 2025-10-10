@@ -11,7 +11,7 @@ export interface Product {
 
 export const getProducts = (): Product[] => [
   {
-    id: "p1",
+    id: "1",
     name: {
       en: "Blue Butterfly Pea Tea",
       de: "Kamillentee",
@@ -35,9 +35,9 @@ export const getProducts = (): Product[] => [
     ],
   },
   {
-    id: "p2",
+    id: "2",
     name: {
-      en: "Lavender Essential Oil",
+      en: "Chai Tea",
       de: "Lavendelöl",
       ja: "ラベンダー精油",
     },
@@ -48,7 +48,7 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "https://placehold.co/300x200?text=Lavender+Oil",
+    image: "/nature-products/media/chai_tea_2.jpg",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
@@ -59,8 +59,12 @@ export const getProducts = (): Product[] => [
     ],
   },
   {
-    id: "p3",
-    name: { en: "Chamomile Tea 2", de: "Kamillentee", ja: "カモミールティー" },
+    id: "3",
+    name: {
+      en: "Chicken Curry Paste",
+      de: "Kamillentee",
+      ja: "カモミールティー",
+    },
     description: {
       en: "A calming herbal tea for relaxation.",
       de: "Ein beruhigender Kräutertee zur Entspannung.",
@@ -68,7 +72,7 @@ export const getProducts = (): Product[] => [
     },
     price: 9.99,
     inStock: true,
-    image: "https://placehold.co/300x200?text=Chamomile+Tea",
+    image: "/nature-products/media/chicken_curry_paste_2.jpg",
     type: "type1",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
@@ -79,9 +83,9 @@ export const getProducts = (): Product[] => [
     ],
   },
   {
-    id: "p4",
+    id: "4",
     name: {
-      en: "Lavender Essential Oil 2",
+      en: "Fish Curry Paste",
       de: "Lavendelöl",
       ja: "ラベンダー精油",
     },
@@ -92,7 +96,127 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "https://placehold.co/300x200?text=Lavender+Oil",
+    image: "/nature-products/media/fish_curry_paste_2.jpg",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
+  },
+  {
+    id: "5",
+    name: {
+      en: "Ginger Tea",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
+    inStock: false,
+    image: "/nature-products/media/ginger_tea_2.jpg",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
+  },
+  {
+    id: "6",
+    name: {
+      en: "Herbal Hair Oil",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
+    inStock: false,
+    image: "/nature-products/media/herbal_hair_oil_3.jpg",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
+  },
+  {
+    id: "7",
+    name: {
+      en: "Mango Leaf Tea",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
+    inStock: false,
+    image: "/nature-products/media/mango_leaf_tea_2.png",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
+  },
+  {
+    id: "8",
+    name: {
+      en: "Rasam",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
+    inStock: false,
+    image: "/nature-products/media/rasam_2.jpg",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
+  },
+  {
+    id: "9",
+    name: {
+      en: "Sesame Oil",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
+    inStock: false,
+    image: "/nature-products/media/sesame_oil_2.png",
     type: "type2",
     tags: [
       { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
