@@ -7,6 +7,7 @@ import Contact from './pages/Contact.tsx';
 import ProductDetail from './pages/ProductDetail.tsx';
 import { Container } from '@mui/material';
 import { AnimatePresence, motion } from 'framer-motion';
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <AnimatePresence mode="wait">
+          <ScrollToTop />
           <Routes>
             <Route
               path="/"

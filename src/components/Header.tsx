@@ -21,7 +21,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import logo from "/nature-products/media/logo.png";
+import logo from "../../public/media/logo.png";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
