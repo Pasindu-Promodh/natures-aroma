@@ -1,73 +1,105 @@
 export interface Product {
   id: string;
-  nameKey: string;
-  descKey: string;
+  name: { en: string; de: string; ja: string };
+  description: { en: string; de: string; ja: string };
   price: number;
   inStock: boolean;
-  tags: string[];
+  tags: { en: string; de: string; ja: string }[];
   image: string;
-  typeKey: string;
+  type: string;
 }
 
-export const getProducts = (): Product[] => [  // Removed (t: TFunction) parameter
+export const getProducts = (): Product[] => [
   {
-    id: '1',
-    nameKey: 'products.items.1.name',
-    descKey: 'products.items.1.desc',
-    price: 5.99,
+    id: "p1",
+    name: {
+      en: "Blue Butterfly Pea Tea",
+      de: "Kamillentee",
+      ja: "カモミールティー",
+    },
+    description: {
+      en: "A calming herbal tea for relaxation.",
+      de: "Ein beruhigender Kräutertee zur Entspannung.",
+      ja: "リラックスのための穏やかなハーブティーです。",
+    },
+    price: 9.99,
     inStock: true,
-    tags: ['organic', 'antioxidant'],
-    image: 'https://placehold.co/300x200?text=Green+Tea&font=montserrat',
-    typeKey: 'products.type1',
+    image: "/nature-products/media/blue_butterfly_pea_tea.png",
+    type: "type1",
+    tags: [
+      { en: "tea", de: "Tee", ja: "お茶" },
+      { en: "herbal", de: "Kräuter", ja: "ハーブ" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "organic", de: "Bio", ja: "オーガニック" },
+      { en: "caffeine-free", de: "Koffeinfrei", ja: "カフェインレス" },
+    ],
   },
   {
-    id: '2',
-    nameKey: 'products.items.2.name',
-    descKey: 'products.items.2.desc',
-    price: 4.99,
+    id: "p2",
+    name: {
+      en: "Lavender Essential Oil",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
     inStock: false,
-    tags: ['relaxing', 'herbal'],
-    image: 'https://placehold.co/300x200?text=Chamomile+Tea&font=montserrat',
-    typeKey: 'products.type1',
+    image: "https://placehold.co/300x200?text=Lavender+Oil",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "aromatherapy", de: "Aromatherapie", ja: "アロマセラピー" },
+      { en: "wellness", de: "Wellness", ja: "ウェルネス" },
+      { en: "skincare", de: "Hautpflege", ja: "スキンケア" },
+    ],
   },
   {
-    id: '3',
-    nameKey: 'products.items.3.name',
-    descKey: 'products.items.3.desc',
-    price: 12.99,
+    id: "p3",
+    name: { en: "Chamomile Tea 2", de: "Kamillentee", ja: "カモミールティー" },
+    description: {
+      en: "A calming herbal tea for relaxation.",
+      de: "Ein beruhigender Kräutertee zur Entspannung.",
+      ja: "リラックスのための穏やかなハーブティーです。",
+    },
+    price: 9.99,
     inStock: true,
-    tags: ['aromatherapy', 'calming'],
-    image: 'https://placehold.co/300x200?text=Lavender+Oil&font=montserrat',
-    typeKey: 'products.type2',
+    image: "https://placehold.co/300x200?text=Chamomile+Tea",
+    type: "type1",
+    tags: [
+      { en: "tea", de: "Tee", ja: "お茶" },
+      { en: "herbal", de: "Kräuter", ja: "ハーブ" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "natural", de: "Natürlich", ja: "ナチュラル" },
+      { en: "wellness", de: "Wellness", ja: "ウェルネス" },
+    ],
   },
   {
-    id: '4',
-    nameKey: 'products.items.4.name',
-    descKey: 'products.items.4.desc',
-    price: 10.99,
-    inStock: true,
-    tags: ['refreshing', 'digestive'],
-    image: 'https://placehold.co/300x200?text=Peppermint+Oil&font=montserrat',
-    typeKey: 'products.type2',
-  },
-  {
-    id: '5',
-    nameKey: 'products.items.5.name',
-    descKey: 'products.items.5.desc',
-    price: 15.99,
+    id: "p4",
+    name: {
+      en: "Lavender Essential Oil 2",
+      de: "Lavendelöl",
+      ja: "ラベンダー精油",
+    },
+    description: {
+      en: "Pure lavender oil for aromatherapy and skincare.",
+      de: "Reines Lavendelöl für Aromatherapie und Hautpflege.",
+      ja: "アロマテラピーやスキンケアに使える純粋なラベンダーオイル。",
+    },
+    price: 14.99,
     inStock: false,
-    tags: ['moisturizing', 'natural'],
-    image: 'https://placehold.co/300x200?text=Aloe+Vera+Cream&font=montserrat',
-    typeKey: 'products.type3',
-  },
-  {
-    id: '6',
-    nameKey: 'products.items.6.name',
-    descKey: 'products.items.6.desc',
-    price: 19.99,
-    inStock: true,
-    tags: ['anti-aging', 'vitamin-rich'],
-    image: 'https://placehold.co/300x200?text=Rosehip+Serum&font=montserrat',
-    typeKey: 'products.type3',
+    image: "https://placehold.co/300x200?text=Lavender+Oil",
+    type: "type2",
+    tags: [
+      { en: "essential oil", de: "Ätherisches Öl", ja: "エッセンシャルオイル" },
+      { en: "lavender", de: "Lavendel", ja: "ラベンダー" },
+      { en: "relaxation", de: "Entspannung", ja: "リラクゼーション" },
+      { en: "spa", de: "Spa", ja: "スパ" },
+      { en: "fragrance", de: "Duft", ja: "香り" },
+    ],
   },
 ];
