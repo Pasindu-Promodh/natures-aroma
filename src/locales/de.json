@@ -1,9 +1,0 @@
-{
-"nav": { "home": "Startseite", "about": "Über Uns", "products": "Produkte", "contact": "Kontakt" },
-"home": { "title": "Nature & Co.", "subtitle": "Bioprodukte von unserem Hof zu Ihnen nach Hause.", "featured": "Ausgewählte Produkte" },
-"about": { "title": "Über Uns", "p1": "Wir setzen uns für nachhaltige Landwirtschaft und natürliche Produkte ein." },
-"products": { "title": "Produkte", "filterAll": "Alle", "filterOils": "Öle", "filterTeas": "Tees", "filterHerbs": "Kräuter", "view": "Ansehen" },
-"contact": { "title": "Kontakt", "name": "Name", "email": "E-Mail", "message": "Nachricht", "send": "Senden" },
-"footer": "© {{year}} Nature & Co. Alle Rechte vorbehalten.",
-"language": "Sprache"
-}

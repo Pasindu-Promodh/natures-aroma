@@ -1,9 +1,0 @@
-{
-"nav": { "home": "ホーム", "about": "会社概要", "products": "製品", "contact": "お問い合わせ" },
-"home": { "title": "Nature & Co.", "subtitle": "農場からあなたの家へ、オーガニック製品をお届けします。", "featured": "おすすめ製品" },
-"about": { "title": "会社概要", "p1": "私たちは持続可能な農業と自然製品に取り組んでいます。" },
-"products": { "title": "製品", "filterAll": "すべて", "filterOils": "オイル", "filterTeas": "お茶", "filterHerbs": "ハーブ", "view": "表示" },
-"contact": { "title": "お問い合わせ", "name": "名前", "email": "メール", "message": "メッセージ", "send": "送信" },
-"footer": "© {{year}} Nature & Co. 無断転載を禁じます。",
-"language": "言語"
-}
