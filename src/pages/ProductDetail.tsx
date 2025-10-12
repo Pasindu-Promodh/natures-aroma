@@ -6,9 +6,6 @@ import {
   Button,
   Chip,
   Paper,
-  Card,
-  CardMedia,
-  CardContent,
   useTheme,
   useMediaQuery,
   Dialog,
@@ -18,6 +15,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
 import { getProducts } from "../data/products";
 import { useState } from "react";
+import ProductGrid from "../components/ProductGrid";
 
 const ProductDetail = () => {
   const { t, i18n } = useTranslation();
@@ -37,16 +35,15 @@ const ProductDetail = () => {
     (p) => p.type === product.type && p.id !== product.id
   );
 
-  const CARD_WIDTH = 300;
-  const CARD_IMAGE_HEIGHT = (CARD_WIDTH * 3) / 2; // 2:3 ratio
-  const CARD_HEIGHT = CARD_IMAGE_HEIGHT + 100;
-  const CARD_SPACING = 16;
-
   return (
     <Box sx={{ p: 2 }}>
       {/* Back Button */}
       <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
-        <Button variant="contained" color="primary" onClick={() => navigate("/products")}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => navigate("/products")}
+        >
           {t("productDetail.back")}
         </Button>
       </Box>
@@ -108,7 +105,12 @@ const ProductDetail = () => {
               {product.tags.length > 0 && (
                 <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 1 }}>
                   {product.tags.map((tag, index) => (
-                    <Chip key={index} label={tag[lang]} color="primary" variant="outlined" />
+                    <Chip
+                      key={index}
+                      label={tag[lang]}
+                      color="primary"
+                      variant="outlined"
+                    />
                   ))}
                 </Box>
               )}
@@ -122,7 +124,12 @@ const ProductDetail = () => {
           onClose={() => setOpenImage(false)}
           fullScreen
           PaperProps={{
-            sx: { backgroundColor: "black", display: "flex", justifyContent: "center", alignItems: "center" },
+            sx: {
+              backgroundColor: "black",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            },
           }}
         >
           <IconButton
@@ -145,51 +152,7 @@ const ProductDetail = () => {
               {t("productDetail.relatedProducts")}
             </Typography>
 
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: `${CARD_SPACING}px`,
-              }}
-            >
-              {relatedProducts.map((rp) => (
-                <motion.div
-                  whileHover={{ scale: 1.03 }}
-                  transition={{ duration: 0.3 }}
-                  onClick={() => navigate(`/products/${rp.id}`)}
-                  key={rp.id}
-                  style={{ cursor: "pointer", width: CARD_WIDTH }}
-                >
-                  <Card sx={{ width: CARD_WIDTH, height: CARD_HEIGHT }}>
-                    <CardMedia
-                      component="img"
-                      height={CARD_IMAGE_HEIGHT}
-                      image={rp.image}
-                      alt={rp.name[lang]}
-                      sx={{ objectFit: "cover" }}
-                    />
-                    <CardContent>
-                      <Typography variant="subtitle1" align="center" noWrap>
-                        {rp.name[lang]}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary" align="center">
-                        ${rp.price.toFixed(2)}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color={rp.inStock ? "success.main" : "error.main"}
-                        align="center"
-                      >
-                        {rp.inStock
-                          ? t("productDetail.inStock")
-                          : t("productDetail.outOfStock")}
-                      </Typography>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </Box>
+            <ProductGrid products={relatedProducts} lang={i18n.language} />
           </Box>
         )}
       </motion.div>

@@ -17,10 +17,10 @@ import {
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { getProducts } from "../data/products";
 import SortIcon from "@mui/icons-material/Sort";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import ProductGrid from "../components/ProductGrid";
 
 const productTypes = [
   {
@@ -54,7 +54,7 @@ const productTypes = [
 
 const Products = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const products = getProducts();
@@ -65,7 +65,6 @@ const Products = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [sortAnchorEl, setSortAnchorEl] = useState<null | HTMLElement>(null);
 
-  const handleProductClick = (id: string) => navigate(`/products/${id}`);
   const handleTypeClick = (typeKey: string) =>
     setSelectedType(selectedType === typeKey ? null : typeKey);
 
@@ -102,10 +101,6 @@ const Products = () => {
 
   // Constants for card dimensions
   const TYPE_CARD_SIZE = 180; // square 1:1
-  const PRODUCT_CARD_WIDTH = 300;
-  const PRODUCT_IMAGE_HEIGHT = (PRODUCT_CARD_WIDTH * 3) / 2; // 2:3 ratio
-  const PRODUCT_CARD_HEIGHT = PRODUCT_IMAGE_HEIGHT + 100; // extra for text
-  const CARD_SPACING = 16;
 
   return (
     <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3, textAlign: "center" }}>
@@ -318,56 +313,10 @@ const Products = () => {
           {t("products.products")}
         </Typography> */}
 
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-            gap: `${CARD_SPACING}px`,
-          }}
-        >
-          {sortedAndFilteredProducts.map((product) => (
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-              onClick={() => handleProductClick(product.id)}
-              key={product.id}
-              style={{ cursor: "pointer", width: PRODUCT_CARD_WIDTH }}
-            >
-              <Card
-                sx={{ width: PRODUCT_CARD_WIDTH, height: PRODUCT_CARD_HEIGHT }}
-              >
-                <CardMedia
-                  component="img"
-                  height={PRODUCT_IMAGE_HEIGHT}
-                  image={product.image}
-                  alt={product.name[lang]}
-                />
-                <CardContent>
-                  <Typography variant="subtitle1" align="center" noWrap>
-                    {product.name[lang] || product.name.en}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    align="center"
-                  >
-                    ${product.price.toFixed(2)}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color={product.inStock ? "success.main" : "error.main"}
-                    align="center"
-                  >
-                    {product.inStock
-                      ? t("productDetail.inStock")
-                      : t("productDetail.outOfStock")}
-                  </Typography>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </Box>
+        <ProductGrid
+          products={sortedAndFilteredProducts}
+          lang={i18n.language}
+        />
       </motion.div>
     </Box>
   );
