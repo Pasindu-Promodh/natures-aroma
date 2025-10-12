@@ -142,7 +142,7 @@ const Header = () => {
                   style={{ height: "40px", marginRight: "8px" }}
                 />
                 <Typography variant="h6" component="div">
-                  Nature's Aroma Secrets
+                  Nature's Aroma
                 </Typography>
               </Box>
 

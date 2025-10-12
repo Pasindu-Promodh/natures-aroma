@@ -10,7 +10,7 @@ i18n
       en: {
         translation: {
           home: {
-            title: "Welcome to Nature's Aroma Secrets",
+            title: "Welcome to Nature's Aroma",
             description:
               "Discover our range of natural and eco-friendly products.",
             popularProducts: "Popular Products",
@@ -87,7 +87,7 @@ i18n
       de: {
         translation: {
           home: {
-            title: "Willkommen bei Nature's Aroma Secrets",
+            title: "Willkommen bei Nature's Aroma",
             description:
               "Entdecken Sie unser Angebot an natürlichen und umweltfreundlichen Produkten.",
             popularProducts: "Beliebte Produkte",
@@ -164,7 +164,7 @@ i18n
       ja: {
         translation: {
           home: {
-            title: "Nature's Aroma Secretsへようこそ",
+            title: "Nature's Aromaへようこそ",
             description:
               "自然でエコフレンドリーな製品の範囲を発見してください。",
             popularProducts: "人気の製品",
