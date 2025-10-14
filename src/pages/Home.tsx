@@ -9,16 +9,15 @@ import {
   Geography,
   Marker,
   Line,
-} from "react-simple-maps";
+  createCoordinates,
+} from "@vnedyalk0v/react19-simple-maps";
+import geo from "../data/countries-110m.json";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language as "en" | "de" | "ja";
 
   const products = getProducts().slice(0, 10);
-
-  const geoUrl =
-    "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
 
   const countries = [
     {
@@ -90,11 +89,11 @@ const Home = () => {
                 height: "auto",
               }}
             >
-              <Geographies geography={geoUrl}>
+              <Geographies geography={geo}>
                 {({ geographies }: { geographies: any[] }) =>
-                  geographies.map((geo) => (
+                  geographies.map((geo,i) => (
                     <Geography
-                      key={geo.rsmKey}
+                      key={i}
                       geography={geo}
                       style={{
                         default: { fill: "#e0e0e0", outline: "none" },
@@ -110,8 +109,13 @@ const Home = () => {
                 i !== 0 ? (
                   <Line
                     key={`line-${i}`}
-                    from={countries[0].coordinates}
-                    to={coordinates}
+                    // from={countries[0].coordinates}
+                    // to={coordinates}
+                    from={createCoordinates(
+                      countries[0].coordinates[0],
+                      countries[0].coordinates[1]
+                    )}
+                    to={createCoordinates(coordinates[0], coordinates[1])}
                     stroke="red"
                     strokeWidth={1}
                     strokeLinecap="round"
@@ -121,12 +125,16 @@ const Home = () => {
 
               {/* Markers */}
               {countries.map(({ name, coordinates }, i) => (
-                <Marker key={i} coordinates={coordinates}>
+                <Marker
+                  key={i}
+                  coordinates={createCoordinates(
+                    coordinates[0],
+                    coordinates[1]
+                  )}
+                >
                   <circle
                     r={5}
-                    fill={
-                      i === 0 ? "#006904ff" : "#28c42dff"
-                    }
+                    fill={i === 0 ? "#006904ff" : "#28c42dff"}
                     stroke="#fff"
                     strokeWidth={2}
                   />
