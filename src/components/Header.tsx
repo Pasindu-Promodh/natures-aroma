@@ -36,6 +36,9 @@ const Header = () => {
   const navItems = [
     { label: t("nav.home"), to: "/" },
     { label: t("nav.products"), to: "/products" },
+    { label: t("nav.sectors"), to: "/sectors" },
+    { label: t("nav.blog"), to: "/blog" },
+    { label: t("nav.career"), to: "/career" },
     { label: t("nav.about"), to: "/about" },
     { label: t("nav.contact"), to: "/contact" },
   ];

@@ -11,7 +11,7 @@ const Contact = () => {
   const { t } = useTranslation();
 
   const email = "info@natureproducts.com";
-  const phone = "+94123456789";
+  const phone = "+94705890009";
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
@@ -71,7 +71,7 @@ const Contact = () => {
                 color="primary"
                 onClick={() =>
                   window.open(
-                    `https://wa.me/94123456789?text=Hello%20Nature%20Products`,
+                    `https://wa.me/94705890009`,
                     "_blank"
                   )
                 }

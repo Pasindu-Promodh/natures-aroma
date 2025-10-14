@@ -21,6 +21,8 @@ import { getProducts } from "../data/products";
 import SortIcon from "@mui/icons-material/Sort";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import ProductGrid from "../components/ProductGrid";
+import InfiniteCarousel from "../components/InfiniteCarousel";
+import FloatingContactButton from "../components/FloatingContactButton";
 
 const productTypes = [
   {
@@ -64,6 +66,8 @@ const Products = () => {
   const [inStockOnly, setInStockOnly] = useState(false);
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [sortAnchorEl, setSortAnchorEl] = useState<null | HTMLElement>(null);
+
+  const popularProducts = getProducts().slice(0, 10);
 
   const handleTypeClick = (typeKey: string) =>
     setSelectedType(selectedType === typeKey ? null : typeKey);
@@ -109,6 +113,11 @@ const Products = () => {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
+        <Typography variant="h4" sx={{ mb: 3, textAlign: "center" }}>
+          {t("home.popularProducts")}
+        </Typography>
+
+        <InfiniteCarousel products={popularProducts} lang={lang}/>
         {/* Header */}
         <Box
           sx={{
@@ -317,6 +326,7 @@ const Products = () => {
           products={sortedAndFilteredProducts}
           lang={i18n.language}
         />
+        <FloatingContactButton />
       </motion.div>
     </Box>
   );

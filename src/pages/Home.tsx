@@ -3,13 +3,37 @@ import { Typography, Box, Paper } from "@mui/material";
 import { motion } from "framer-motion";
 import { getProducts } from "../data/products";
 import InfiniteCarousel from "../components/InfiniteCarousel";
-
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+  Line,
+} from "react-simple-maps";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
   const lang = i18n.language as "en" | "de" | "ja";
 
   const products = getProducts().slice(0, 10);
+
+  const geoUrl =
+    "https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json";
+
+  const countries = [
+    {
+      name: { en: "Sri Lanka", de: "Sri Lanka", ja: "スリランカ" },
+      coordinates: [80.7718, 7.8731],
+    },
+    {
+      name: { en: "Germany", de: "Deutschland", ja: "ドイツ" },
+      coordinates: [10.4515, 51.1657],
+    },
+    {
+      name: { en: "Japan", de: "Japan", ja: "日本" },
+      coordinates: [138.2529, 36.2048],
+    },
+  ];
 
   return (
     <Box>
@@ -34,8 +58,95 @@ const Home = () => {
           {t("home.popularProducts")}
         </Typography>
 
-        <InfiniteCarousel products={products} lang={lang}/>
+        <InfiniteCarousel products={products} lang={lang} />
 
+        <Box
+          sx={{
+            maxWidth: "100%",
+            mx: "auto",
+            textAlign: "center",
+            mt: { xs: 4, md: 6 },
+            px: { xs: 1, sm: 2 },
+          }}
+        >
+          <Typography variant="h4" gutterBottom>
+            {t("home.ourGlobalReach")}
+          </Typography>
+
+          <Box
+            sx={{
+              width: "100%",
+              overflow: "hidden",
+              "& svg": {
+                width: "100%",
+                height: "auto",
+              },
+            }}
+          >
+            <ComposableMap
+              projectionConfig={{ scale: 160 }}
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
+            >
+              <Geographies geography={geoUrl}>
+                {({ geographies }: { geographies: any[] }) =>
+                  geographies.map((geo) => (
+                    <Geography
+                      key={geo.rsmKey}
+                      geography={geo}
+                      style={{
+                        default: { fill: "#e0e0e0", outline: "none" },
+                        hover: { fill: "#9ccc65", outline: "none" },
+                      }}
+                    />
+                  ))
+                }
+              </Geographies>
+
+              {/* Lines from Sri Lanka to others */}
+              {countries.map(({ coordinates }, i) =>
+                i !== 0 ? (
+                  <Line
+                    key={`line-${i}`}
+                    from={countries[0].coordinates}
+                    to={coordinates}
+                    stroke="red"
+                    strokeWidth={1}
+                    strokeLinecap="round"
+                  />
+                ) : null
+              )}
+
+              {/* Markers */}
+              {countries.map(({ name, coordinates }, i) => (
+                <Marker key={i} coordinates={coordinates}>
+                  <circle
+                    r={5}
+                    fill={
+                      i === 0 ? "#006904ff" : "#28c42dff"
+                    }
+                    stroke="#fff"
+                    strokeWidth={2}
+                  />
+                  <text
+                    textAnchor="middle"
+                    y={-10}
+                    fontSize={10}
+                    style={{
+                      fontFamily: "sans-serif",
+                      fontWeight: 900,
+                      fill: "#333",
+                    }}
+                  >
+                    {name[lang] || name.en}
+                  </text>
+                </Marker>
+              ))}
+            </ComposableMap>
+          </Box>
+        </Box>
       </motion.div>
     </Box>
   );
