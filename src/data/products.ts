@@ -24,7 +24,8 @@ export const getProducts = (): Product[] => [
     },
     price: 9.99,
     inStock: true,
-    image: "/natures-aroma/media/blue_butterfly_pea_tea.png",
+    // image: "/natures-aroma/media/blue_butterfly_pea_tea.png",
+    image: "/natures-aroma/media/edited-photo.png",
     type: "type1",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
