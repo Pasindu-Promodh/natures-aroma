@@ -79,7 +79,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <Typography variant="subtitle1" noWrap>
             {product.name[lang] || product.name.en}
           </Typography>
-          <Typography variant="body2">${product.price.toFixed(2)}</Typography>
+          {/* <Typography variant="body2">${product.price.toFixed(2)}</Typography>
           <Typography
             variant="body2"
             color={product.inStock ? "success.main" : "error.main"}
@@ -87,7 +87,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {product.inStock
               ? t("productDetail.inStock")
               : t("productDetail.outOfStock")}
-          </Typography>
+          </Typography> */}
         </Box>
       </Paper>
     </motion.div>

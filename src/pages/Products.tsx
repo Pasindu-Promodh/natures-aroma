@@ -26,28 +26,31 @@ import FloatingContactButton from "../components/FloatingContactButton";
 
 const productTypes = [
   {
-    key: "type1",
+    key: "1",
+    type: "oil",
     image: "https://placehold.co/300x300?text=Herbal+Teas&font=montserrat",
     name: {
-      en: "Herbal Teas",
+      en: "Oil",
       de: "Kräutertees",
       ja: "ハーブティー",
     },
   },
   {
-    key: "type2",
+    key: "2",
+    type: "spice",
     image: "https://placehold.co/300x300?text=Essential+Oils&font=montserrat",
     name: {
-      en: "Essential Oils",
+      en: "Spice",
       de: "Ätherische Öle",
       ja: "エッセンシャルオイル",
     },
   },
   {
-    key: "type3",
+    key: "3",
+    type: "tea",
     image: "https://placehold.co/300x300?text=Organic+Skincare&font=montserrat",
     name: {
-      en: "Organic Skincare",
+      en: "Tea",
       de: "Bio-Hautpflege",
       ja: "オーガニックスキンケア",
     },
@@ -125,6 +128,7 @@ const Products = () => {
             justifyContent: "center",
             alignItems: "center",
             mb: 3,
+            mt: 4,
             gap: 2,
           }}
         >
@@ -154,7 +158,7 @@ const Products = () => {
                 )
               }
             >
-              {t("products.viewCatalogue")}
+              {t("products.catalogue")}
             </Button>
           )}
         </Box>
@@ -176,7 +180,7 @@ const Products = () => {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              onClick={() => handleTypeClick(type.key)}
+              onClick={() => handleTypeClick(type.type)}
               key={type.key}
               style={{
                 cursor: "pointer",

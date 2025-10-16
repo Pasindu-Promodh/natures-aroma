@@ -1,11 +1,20 @@
-import { useTranslation } from 'react-i18next';
-import { Typography, Box, TextField, Button, Paper, IconButton, Tooltip } from '@mui/material';
-import { motion } from 'framer-motion';
+import { useTranslation } from "react-i18next";
+import {
+  Typography,
+  Box,
+  TextField,
+  Button,
+  Paper,
+  IconButton,
+  Tooltip,
+} from "@mui/material";
+import { motion } from "framer-motion";
 import EmailIcon from "@mui/icons-material/Email";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import PhoneIcon from "@mui/icons-material/Phone";
+import InstagramIcon from "@mui/icons-material/Instagram"; // ✅ Added
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -27,15 +36,36 @@ const Contact = () => {
       >
         <Paper elevation={3} sx={{ p: 4 }}>
           <Typography variant="h3" gutterBottom>
-            {t('contact.title')}
+            {t("contact.title")}
           </Typography>
-          <img src="https://placehold.co/600x200?text=Contact+Us&font=poppins" alt="Contact Us" style={{ width: '100%', borderRadius: '8px'}} />
+          <img
+            src="https://placehold.co/600x200?text=Contact+Us&font=poppins"
+            alt="Contact Us"
+            style={{ width: "100%", borderRadius: "8px" }}
+          />
           <form noValidate autoComplete="off">
-            <TextField fullWidth label={t('contact.name')} variant="outlined" sx={{ mb: 2 }} />
-            <TextField fullWidth label={t('contact.email')} variant="outlined" sx={{ mb: 2 }} />
-            <TextField fullWidth label={t('contact.message')} variant="outlined" multiline rows={4} sx={{ mb: 2 }} />
+            <TextField
+              fullWidth
+              label={t("contact.name")}
+              variant="outlined"
+              sx={{ mb: 2 }}
+            />
+            <TextField
+              fullWidth
+              label={t("contact.email")}
+              variant="outlined"
+              sx={{ mb: 2 }}
+            />
+            <TextField
+              fullWidth
+              label={t("contact.message")}
+              variant="outlined"
+              multiline
+              rows={4}
+              sx={{ mb: 2 }}
+            />
             <Button variant="contained" color="primary">
-              {t('contact.submit')}
+              {t("contact.submit")}
             </Button>
           </form>
 
@@ -49,38 +79,53 @@ const Contact = () => {
               flexWrap: "wrap",
             }}
           >
-            <Tooltip title="Copy Email">
+            <Tooltip title={t("contact.copyEmail")}>
               <IconButton color="primary" onClick={copyEmail}>
                 <EmailIcon />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="Facebook">
+            <Tooltip title={t("contact.faceBook")}>
               <IconButton
                 color="primary"
                 onClick={() =>
-                  window.open("https://www.facebook.com/YourPage", "_blank")
+                  window.open(
+                    "https://www.facebook.com/Naturesaroma.pvt.Ltd",
+                    "_blank"
+                  )
                 }
               >
                 <FacebookIcon />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="WhatsApp">
+            <Tooltip title={t("contact.instagram")}>
+              <IconButton
+                color="primary"
+                onClick={
+                  () =>
+                    window.open(
+                      "https://www.instagram.com/naturesaroma_secrets/",
+                      "_blank"
+                    ) // ✅ Update with your real handle
+                }
+              >
+                <InstagramIcon />
+              </IconButton>
+            </Tooltip>
+
+            <Tooltip title={t("contact.whatsApp")}>
               <IconButton
                 color="primary"
                 onClick={() =>
-                  window.open(
-                    `https://wa.me/94705890009`,
-                    "_blank"
-                  )
+                  window.open(`https://wa.me/94705890009`, "_blank")
                 }
               >
                 <WhatsAppIcon />
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="YouTube">
+            <Tooltip title={t("contact.youtube")}>
               <IconButton
                 color="primary"
                 onClick={() =>
@@ -91,7 +136,7 @@ const Contact = () => {
               </IconButton>
             </Tooltip>
 
-            <Tooltip title="Call Us">
+            <Tooltip title={t("contact.callUs")}>
               <IconButton color="primary" href={`tel:${phone}`}>
                 <PhoneIcon />
               </IconButton>

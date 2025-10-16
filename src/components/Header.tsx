@@ -21,7 +21,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import LanguageIcon from "@mui/icons-material/Language";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
-import logo from "../../public/logo2.jpg";
+import logo from "../../public/logo-transparent2.png";
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -90,7 +90,13 @@ const Header = () => {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{
+          background: "linear-gradient(to bottom, #1b5e20, #81c784)", // dark → light green
+          boxShadow: "none", // optional: remove default shadow for a cleaner gradient look
+        }}
+      >
         <Toolbar sx={{ position: "relative", justifyContent: "space-between" }}>
           {isMobile ? (
             <>
@@ -113,11 +119,7 @@ const Header = () => {
                 }}
               >
                 <RouterLink to="/">
-                  <img
-                    src={logo}
-                    alt="Logo"
-                    style={{ height: "40px" }}
-                  />
+                  <img src={logo} alt="Logo" style={{ height: "50px" }} />
                 </RouterLink>
               </Box>
 
@@ -128,7 +130,6 @@ const Header = () => {
             </>
           ) : (
             <>
-
               <Box
                 component={RouterLink}
                 to="/"
@@ -142,7 +143,7 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="Nature Products Logo"
-                  style={{ height: "40px", marginRight: "8px" }}
+                  style={{ height: "50px", marginRight: "8px" }}
                 />
                 <Typography variant="h6" component="div">
                   Nature's Aroma

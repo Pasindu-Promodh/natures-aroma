@@ -15,30 +15,43 @@ import i18n from "../i18n";
 
 const productTypes = [
   {
-    key: "type1",
-    image: "https://placehold.co/300x300?text=Herbal+Teas&font=montserrat",
+    key: "1",
+    image:
+      "https://placehold.co/300x300?text=Sustainable+Agriculture&font=montserrat",
     name: {
-      en: "Herbal Teas",
-      de: "Kräutertees",
-      ja: "ハーブティー",
+      en: "Sustainable Agriculture",
+      de: "Nachhaltige Landwirtschaft",
+      ja: "持続可能な農業",
     },
   },
   {
-    key: "type2",
-    image: "https://placehold.co/300x300?text=Essential+Oils&font=montserrat",
+    key: "2",
+    image:
+      "https://placehold.co/300x300?text=Business+Solutions&font=montserrat",
     name: {
-      en: "Essential Oils",
-      de: "Ätherische Öle",
-      ja: "エッセンシャルオイル",
+      en: "Business Solutions",
+      de: "Geschäftslösungen",
+      ja: "ビジネスソリューション",
     },
   },
   {
-    key: "type3",
-    image: "https://placehold.co/300x300?text=Organic+Skincare&font=montserrat",
+    key: "3",
+    image:
+      "https://placehold.co/300x300?text=Property+Management&font=montserrat",
     name: {
-      en: "Organic Skincare",
-      de: "Bio-Hautpflege",
-      ja: "オーガニックスキンケア",
+      en: "Property Management",
+      de: "Immobilienverwaltung",
+      ja: "不動産管理",
+    },
+  },
+  {
+    key: "4",
+    image:
+      "https://placehold.co/300x300?text=Export+Excellence&font=montserrat",
+    name: {
+      en: "Export Excellence",
+      de: "Export-Exzellenz",
+      ja: "輸出の卓越性",
     },
   },
 ];
@@ -54,7 +67,7 @@ const Sectors = () => {
   const handleTypeClick = (typeKey: string) =>
     setSelectedType(selectedType === typeKey ? null : typeKey);
 
-  const TYPE_CARD_SIZE = 180; // square 1:1
+  const TYPE_CARD_SIZE = 275; // square 1:1
 
   return (
     <Box>

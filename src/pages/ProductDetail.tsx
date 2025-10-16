@@ -4,7 +4,6 @@ import {
   Typography,
   Box,
   Button,
-  Chip,
   Paper,
   useTheme,
   useMediaQuery,
@@ -91,7 +90,7 @@ const ProductDetail = () => {
               <Typography variant="body1" paragraph>
                 {product.description[lang]}
               </Typography>
-              <Typography variant="h6">
+              {/* <Typography variant="h6">
                 {t("productDetail.price")}: ${product.price.toFixed(2)}
               </Typography>
               <Typography
@@ -101,8 +100,8 @@ const ProductDetail = () => {
                 {product.inStock
                   ? t("productDetail.inStock")
                   : t("productDetail.outOfStock")}
-              </Typography>
-              {product.tags.length > 0 && (
+              </Typography> */}
+              {/* {product.tags.length > 0 && (
                 <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 1 }}>
                   {product.tags.map((tag, index) => (
                     <Chip
@@ -113,7 +112,7 @@ const ProductDetail = () => {
                     />
                   ))}
                 </Box>
-              )}
+              )} */}
             </Box>
           </Box>
         </Paper>

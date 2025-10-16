@@ -1,6 +1,5 @@
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
 interface Product {
@@ -23,7 +22,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
   cardSpacing = 16,
 }) => {
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleProductClick = (id: string) => navigate(`/products/${id}`);
@@ -83,13 +82,13 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                 width: "100%",
                 background: "rgba(0, 0, 0, 0.7)",
                 textAlign: "center",
-                py: 1,
+                // py: 1,
               }}
             >
               <Typography variant="subtitle1" noWrap color="white">
                 {product.name[lang] || product.name.en}
               </Typography>
-              <Typography variant="body2" color="white">
+              {/* <Typography variant="body2" color="white">
                 ${product.price.toFixed(2)}
               </Typography>
               <Typography
@@ -99,7 +98,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({
                 {product.inStock
                       ? t("productDetail.inStock")
                       : t("productDetail.outOfStock")}
-              </Typography>
+              </Typography> */}
             </CardContent>
           </Card>
         </motion.div>
