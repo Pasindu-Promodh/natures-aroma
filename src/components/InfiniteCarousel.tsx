@@ -2,7 +2,6 @@ import { useRef, useEffect, useState } from "react";
 import { Box, Paper, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
 
 interface InfiniteCarouselProps {
   products: any[];
@@ -31,7 +30,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   lang,
   onClick,
 }) => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
