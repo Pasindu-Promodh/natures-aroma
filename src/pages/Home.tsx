@@ -27,7 +27,7 @@ const Home = () => {
   const lang = i18n.language as "en" | "de" | "ja";
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const TYPE_CARD_SIZE = 180;
+  const TYPE_CARD_SIZE = 217;
 
   const products = getProducts().slice(0, 10);
 
@@ -91,9 +91,11 @@ const Home = () => {
       >
         <Paper elevation={3} sx={{ p: 4, textAlign: "center", mb: 6 }}>
           <img
-            src="https://placehold.co/800x400?text=Nature+Landscape&font=lato"
+            src="/natures-aroma/media/Natures-landscape.png"
             alt="Nature Landscape"
-            style={{ width: "100%", maxWidth: "800px", borderRadius: "8px" }}
+            style={{ width: "100%", 
+              // maxWidth: "800px", 
+              borderRadius: "8px" }}
           />
           <Typography variant="h3" gutterBottom sx={{ mt: 2 }}>
             {t("home.title")}
@@ -147,12 +149,12 @@ const Home = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={{ height: "70%",objectFit:"contain" }} // image takes 70% of card height
+                  sx={{ height: "100%",objectFit:"contain",  }} // image takes 70% of card height
                   image={c.image}
                   alt={c.name}
 
                 />
-                <CardContent
+                {/* <CardContent
                   sx={{
                     flexGrow: 1,
                     display: "flex",
@@ -164,7 +166,7 @@ const Home = () => {
                   <Typography variant="subtitle1" align="center">
                     {c.name}
                   </Typography>
-                </CardContent>
+                </CardContent> */}
               </Card>
             </motion.div>
           ))}

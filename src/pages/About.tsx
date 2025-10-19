@@ -23,7 +23,7 @@ const About = () => {
       >
         <Paper elevation={3} sx={{ p: 4 }}>
           <img
-            src="https://placehold.co/600x200?text=About+Us&font=roboto"
+            src="/natures-aroma/media/about-us.png"
             alt="About Us"
             style={{ width: "100%", borderRadius: "8px", marginBottom: "16px" }}
           />

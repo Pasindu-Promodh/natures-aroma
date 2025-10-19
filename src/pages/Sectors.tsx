@@ -78,7 +78,7 @@ const Sectors = () => {
       >
         <Paper elevation={3} sx={{ p: 4, mb: 4 }}>
           <img
-            src="https://placehold.co/600x200?text=Sectors&font=roboto"
+            src="/natures-aroma/media/sectors.png"
             alt="About Us"
             style={{ width: "100%", borderRadius: "8px" }}
           />
