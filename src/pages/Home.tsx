@@ -7,7 +7,6 @@ import {
   useMediaQuery,
   Card,
   CardMedia,
-  CardContent,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { getProducts } from "../data/products";
