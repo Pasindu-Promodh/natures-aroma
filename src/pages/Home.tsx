@@ -2,11 +2,14 @@ import { useTranslation } from "react-i18next";
 import {
   Typography,
   Box,
-  Paper,
   useTheme,
   useMediaQuery,
   Card,
   CardMedia,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { getProducts } from "../data/products";
@@ -20,6 +23,7 @@ import {
   createCoordinates,
 } from "@vnedyalk0v/react19-simple-maps";
 import geo from "../data/countries-110m.json";
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -74,33 +78,56 @@ const Home = () => {
   ];
 
   const ourCustomers = [
-    { key: "1", name: "Hemas", image: "/natures-aroma/media/customers/Hemas.jpeg" },
-    { key: "2", name: "Pyramid vilmar", image: "/natures-aroma/media/customers/pw.png" },
-    { key: "3", name: "Celebration holdings", image: "/natures-aroma/media/customers/ch.png" },
-    { key: "4", name: "Atnasal pvt ltd", image: "/natures-aroma/media/customers/atnasal.webp" },
-    { key: "5", name: "Ayuviva", image: "/natures-aroma/media/customers/ayuviva.jpg" },
+    {
+      key: "1",
+      name: "Hemas",
+      image: "/natures-aroma/media/customers/Hemas.jpeg",
+    },
+    {
+      key: "2",
+      name: "Pyramid vilmar",
+      image: "/natures-aroma/media/customers/pw.png",
+    },
+    {
+      key: "3",
+      name: "Celebration holdings",
+      image: "/natures-aroma/media/customers/ch.png",
+    },
+    {
+      key: "4",
+      name: "Atnasal pvt ltd",
+      image: "/natures-aroma/media/customers/atnasal.webp",
+    },
+    {
+      key: "5",
+      name: "Ayuviva",
+      image: "/natures-aroma/media/customers/ayuviva.jpg",
+    },
   ];
 
   return (
-    <Box>
+    <Box sx={{ pt: { xs: 8, sm: 10 } }}>
+      {/* <Box> */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
-        <Paper elevation={3} sx={{ p: 4, textAlign: "center", mb: 6 }}>
-          <img
-            src="/natures-aroma/media/Natures-landscape.png"
-            alt="Nature Landscape"
-            style={{ width: "100%", 
-              // maxWidth: "800px", 
-              borderRadius: "8px" }}
-          />
-          <Typography variant="h3" gutterBottom sx={{ mt: 2 }}>
-            {t("home.title")}
-          </Typography>
-          <Typography variant="body1">{t("home.description")}</Typography>
-        </Paper>
+        {/* <Paper elevation={3} sx={{ p: 4, textAlign: "center", mb: 6 }}> */}
+        <img
+          src="/natures-aroma/media/Natures-landscape.png"
+          alt="Nature Landscape"
+          style={{
+            width: "100%",
+            // maxWidth: "800px",
+            borderRadius: "8px",
+          }}
+        />
+        <Typography variant="h3" gutterBottom sx={{ mt: 2 }}>
+          {t("home.title")}
+        </Typography>
+        <Typography variant="body1">{t("home.description")}</Typography>
+        {/* </Paper> */}
 
         <Typography variant="h4" sx={{ mb: 3, textAlign: "center" }}>
           {t("home.popularProducts")}
@@ -148,10 +175,9 @@ const Home = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={{ height: "100%",objectFit:"contain",  }} // image takes 70% of card height
+                  sx={{ height: "100%", objectFit: "contain" }} // image takes 70% of card height
                   image={c.image}
                   alt={c.name}
-
                 />
                 {/* <CardContent
                   sx={{
@@ -265,6 +291,164 @@ const Home = () => {
                 </Marker>
               ))}
             </ComposableMap>
+          </Box>
+        </Box>
+
+        {/* ABOUT SECTION */}
+        <Box
+          id="about-section"
+          sx={{
+            scrollMarginTop: { xs: "80px", sm: "90px" },
+            py: { xs: 4, md: 8 },
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: "center",
+              gap: 4,
+              mb: 8,
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
+              <motion.img
+                src="/natures-aroma/media/about-us.png"
+                alt="About Us"
+                style={{
+                  width: "100%",
+                  borderRadius: "12px",
+                  objectFit: "cover",
+                }}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              />
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <Typography variant="h4" sx={{ mb: 2 }}>
+                {t("about.title")}
+              </Typography>
+              <Typography variant="body1">{t("about.description")}</Typography>
+            </Box>
+          </Box>
+
+          {/* SECTION 2 - Vision (Image Right) */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row-reverse" },
+              alignItems: "center",
+              gap: 4,
+              mb: 8,
+              width: "100%",
+              boxSizing: "border-box",
+              overflow: "hidden",
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
+              <motion.img
+                src="/natures-aroma/media/about-us.png"
+                alt="Our Vision"
+                style={{
+                  maxWidth: "100%",
+                  borderRadius: "12px",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              />
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <Typography variant="h4" sx={{ mb: 2 }}>
+                {t("about.ourVision")}
+              </Typography>
+              <Typography variant="body1">{t("about.vision")}</Typography>
+            </Box>
+          </Box>
+
+          {/* SECTION 3 - Mission (Image Left) */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" },
+              alignItems: "center",
+              gap: 4,
+              mb: 8,
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
+              <motion.img
+                src="/natures-aroma/media/about-us.png"
+                alt="Our Mission"
+                style={{
+                  width: "100%",
+                  borderRadius: "12px",
+                  objectFit: "cover",
+                }}
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              />
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <Typography variant="h4" sx={{ mb: 2 }}>
+                {t("about.ourMission")}
+              </Typography>
+              <List>
+                {(t("about.mission", { returnObjects: true }) as string[]).map(
+                  (mission: string, index: number) => (
+                    <ListItem key={index} sx={{ alignItems: "flex-start" }}>
+                      <ListItemIcon sx={{ minWidth: "32px", mt: "5px" }}>
+                        <FiberManualRecordIcon
+                          fontSize="small"
+                          sx={{ color: "green" }}
+                        />
+                      </ListItemIcon>
+                      <ListItemText primary={mission} />
+                    </ListItem>
+                  )
+                )}
+              </List>
+            </Box>
+          </Box>
+
+          {/* SECTION 4 - Approach (Image Right) */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row-reverse" },
+              alignItems: "center",
+              gap: 4,
+
+              width: "100%",
+              boxSizing: "border-box", // important to prevent overflow
+              overflow: "hidden",
+            }}
+          >
+            <Box sx={{ flex: 1 }}>
+              <motion.img
+                src="/natures-aroma/media/about-us.png"
+                alt="Our Approach"
+                style={{
+                  maxWidth: "100%",
+                  borderRadius: "12px",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+              />
+            </Box>
+            <Box sx={{ flex: 1 }}>
+              <Typography variant="h4" sx={{ mb: 2 }}>
+                {t("about.ourApproach")}
+              </Typography>
+              <Typography variant="body1">{t("about.approach")}</Typography>
+            </Box>
           </Box>
         </Box>
       </motion.div>
