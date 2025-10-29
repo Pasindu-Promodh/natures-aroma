@@ -6,11 +6,16 @@ import Products from "./pages/Products.tsx";
 import Contact from "./pages/Contact.tsx";
 import ProductDetail from "./pages/ProductDetail.tsx";
 import { Container } from "@mui/material";
-import { AnimatePresence, motion } from "framer-motion";
-import ScrollToTop from "./components/ScrollToTop.tsx";
+import { AnimatePresence } from "framer-motion";
+import ScrollResetAndAnimate from "./components/ScrollResetAndAnimate.tsx";
 import Sectors from "./pages/Sectors.tsx";
 import Blog from "./pages/Blog.tsx";
 import Career from "./pages/Career.tsx";
+
+// Disable browser scroll restoration
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
 
 function App() {
   return (
@@ -18,118 +23,69 @@ function App() {
       <Header />
       <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
         <AnimatePresence mode="wait">
-          <ScrollToTop />
           <Routes>
             <Route
               path="/"
               element={
-                <motion.div
-                  key="home"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="home">
                   <Home />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/products"
               element={
-                <motion.div
-                  key="products"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="products">
                   <Products />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/products/:id"
               element={
-                <motion.div
-                  key="product-detail"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="product-detail">
                   <ProductDetail />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/sectors"
               element={
-                <motion.div
-                  key="about"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="sectors">
                   <Sectors />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/blog"
               element={
-                <motion.div
-                  key="about"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="blog">
                   <Blog />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/career"
               element={
-                <motion.div
-                  key="about"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="career">
                   <Career />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/about"
               element={
-                <motion.div
-                  key="about"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="about">
                   <About />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
             <Route
               path="/contact"
               element={
-                <motion.div
-                  key="contact"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -50 }}
-                  transition={{ duration: 0.5 }}
-                >
+                <ScrollResetAndAnimate motionKey="contact">
                   <Contact />
-                </motion.div>
+                </ScrollResetAndAnimate>
               }
             />
           </Routes>

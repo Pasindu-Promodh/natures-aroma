@@ -12,13 +12,20 @@ const theme = createTheme({
   palette: {
     primary: {
       main: "#4CAF50", // Green for nature theme
+      dark: "#388E3C",
+      light: "#8BC34A",
+      contrastText: "#000000ff",
     },
     secondary: {
-      main: "#8BC34A",
+      main: "#ff863f",
+      dark: "",
+      light: "",
+      contrastText: "",
     },
     background: {
       default: "#F1F8E9",
     },
+
   },
   typography: {
     // fontFamily: 'Roboto, sans-serif',

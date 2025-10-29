@@ -161,7 +161,8 @@ const Blog = () => {
   // const handleProductClick = (id: string) => navigate(`/products/${id}`);
 
   return (
-    <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3 }}>
+    // <Box sx={{ px: { xs: 2, sm: 3, md: 5 }, py: 3 }}>
+    <Box sx={{ pt: { xs: 8, sm: 10 } }}>
       <motion.div
         initial={{ scale: 0.95, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

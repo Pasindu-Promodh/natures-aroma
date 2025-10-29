@@ -70,7 +70,7 @@ const Sectors = () => {
   const TYPE_CARD_SIZE = 275; // square 1:1
 
   return (
-    <Box>
+    <Box sx={{ pt: { xs: 8, sm: 10 } }}>
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}

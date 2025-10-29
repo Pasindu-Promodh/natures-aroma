@@ -6,10 +6,6 @@ import {
   useMediaQuery,
   Card,
   CardMedia,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
 } from "@mui/material";
 import { motion } from "framer-motion";
 import { getProducts } from "../data/products";
@@ -23,7 +19,8 @@ import {
   createCoordinates,
 } from "@vnedyalk0v/react19-simple-maps";
 import geo from "../data/countries-110m.json";
-import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
+import Contact from "./Contact";
+import About from "./About";
 
 const Home = () => {
   const { t, i18n } = useTranslation();
@@ -129,11 +126,13 @@ const Home = () => {
         <Typography variant="body1">{t("home.description")}</Typography>
         {/* </Paper> */}
 
-        <Typography variant="h4" sx={{ mb: 3, textAlign: "center" }}>
-          {t("home.popularProducts")}
-        </Typography>
+        <Box sx={{ mt: 6 }}>
+          <Typography variant="h4" sx={{ mb: 3, textAlign: "center" }}>
+            {t("home.popularProducts")}
+          </Typography>
 
-        <InfiniteCarousel products={products} lang={lang} />
+          <InfiniteCarousel products={products} lang={lang} />
+        </Box>
 
         <Typography variant="h4" sx={{ mb: 3, textAlign: "center", mt: 4 }}>
           {t("home.ourCustomers")}
@@ -302,154 +301,17 @@ const Home = () => {
             py: { xs: 4, md: 8 },
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignItems: "center",
-              gap: 4,
-              mb: 8,
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <motion.img
-                src="/natures-aroma/media/about-us.png"
-                alt="About Us"
-                style={{
-                  width: "100%",
-                  borderRadius: "12px",
-                  objectFit: "cover",
-                }}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              />
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" sx={{ mb: 2 }}>
-                {t("about.title")}
-              </Typography>
-              <Typography variant="body1">{t("about.description")}</Typography>
-            </Box>
-          </Box>
-
-          {/* SECTION 2 - Vision (Image Right) */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row-reverse" },
-              alignItems: "center",
-              gap: 4,
-              mb: 8,
-              width: "100%",
-              boxSizing: "border-box",
-              overflow: "hidden",
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <motion.img
-                src="/natures-aroma/media/about-us.png"
-                alt="Our Vision"
-                style={{
-                  maxWidth: "100%",
-                  borderRadius: "12px",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              />
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" sx={{ mb: 2 }}>
-                {t("about.ourVision")}
-              </Typography>
-              <Typography variant="body1">{t("about.vision")}</Typography>
-            </Box>
-          </Box>
-
-          {/* SECTION 3 - Mission (Image Left) */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" },
-              alignItems: "center",
-              gap: 4,
-              mb: 8,
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <motion.img
-                src="/natures-aroma/media/about-us.png"
-                alt="Our Mission"
-                style={{
-                  width: "100%",
-                  borderRadius: "12px",
-                  objectFit: "cover",
-                }}
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              />
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" sx={{ mb: 2 }}>
-                {t("about.ourMission")}
-              </Typography>
-              <List>
-                {(t("about.mission", { returnObjects: true }) as string[]).map(
-                  (mission: string, index: number) => (
-                    <ListItem key={index} sx={{ alignItems: "flex-start" }}>
-                      <ListItemIcon sx={{ minWidth: "32px", mt: "5px" }}>
-                        <FiberManualRecordIcon
-                          fontSize="small"
-                          sx={{ color: "green" }}
-                        />
-                      </ListItemIcon>
-                      <ListItemText primary={mission} />
-                    </ListItem>
-                  )
-                )}
-              </List>
-            </Box>
-          </Box>
-
-          {/* SECTION 4 - Approach (Image Right) */}
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row-reverse" },
-              alignItems: "center",
-              gap: 4,
-
-              width: "100%",
-              boxSizing: "border-box", // important to prevent overflow
-              overflow: "hidden",
-            }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <motion.img
-                src="/natures-aroma/media/about-us.png"
-                alt="Our Approach"
-                style={{
-                  maxWidth: "100%",
-                  borderRadius: "12px",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-              />
-            </Box>
-            <Box sx={{ flex: 1 }}>
-              <Typography variant="h4" sx={{ mb: 2 }}>
-                {t("about.ourApproach")}
-              </Typography>
-              <Typography variant="body1">{t("about.approach")}</Typography>
-            </Box>
-          </Box>
+          <About />
+        </Box>
+        {/* CONTACT SECTION */}
+        <Box
+          id="contact-section"
+          sx={{
+            scrollMarginTop: { xs: "80px", sm: "90px" },
+            py: { xs: 4, md: 8 },
+          }}
+        >
+          <Contact />
         </Box>
       </motion.div>
     </Box>
