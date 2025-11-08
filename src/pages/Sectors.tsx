@@ -17,7 +17,7 @@ const productTypes = [
   {
     key: "1",
     image:
-      "https://placehold.co/300x300?text=Sustainable+Agriculture&font=montserrat",
+      "/natures-aroma/media/sustainable.jpg",
     name: {
       en: "Sustainable Agriculture",
       de: "Nachhaltige Landwirtschaft",
@@ -27,7 +27,7 @@ const productTypes = [
   {
     key: "2",
     image:
-      "https://placehold.co/300x300?text=Business+Solutions&font=montserrat",
+      "/natures-aroma/media/business.jpg",
     name: {
       en: "Business Solutions",
       de: "Geschäftslösungen",
@@ -37,7 +37,7 @@ const productTypes = [
   {
     key: "3",
     image:
-      "https://placehold.co/300x300?text=Property+Management&font=montserrat",
+      "/natures-aroma/media/property.jpg",
     name: {
       en: "Property Management",
       de: "Immobilienverwaltung",
@@ -47,7 +47,7 @@ const productTypes = [
   {
     key: "4",
     image:
-      "https://placehold.co/300x300?text=Export+Excellence&font=montserrat",
+      "/natures-aroma/media/export.jpg",
     name: {
       en: "Export Excellence",
       de: "Export-Exzellenz",

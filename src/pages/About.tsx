@@ -121,7 +121,7 @@ const About = () => {
       >
         <Box sx={{ flex: 1 }}>
           <motion.img
-            src="/natures-aroma/media/about-us.png"
+            src="/natures-aroma/media/our_vision.jpg"
             alt="Our Vision"
             style={{
               maxWidth: "100%",
@@ -154,7 +154,7 @@ const About = () => {
       >
         <Box sx={{ flex: 1 }}>
           <motion.img
-            src="/natures-aroma/media/about-us.png"
+            src="/natures-aroma/media/our_mission.jpg"
             alt="Our Mission"
             style={{
               width: "100%",

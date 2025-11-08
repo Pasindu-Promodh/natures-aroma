@@ -35,7 +35,8 @@ const ProductDetail = () => {
   );
 
   return (
-    <Box sx={{ p: 2 }}>
+    // <Box sx={{ p: 2 }}>
+    <Box sx={{ pt: { xs: 8, sm: 10 } }}>
       {/* Back Button */}
       <Box sx={{ display: "flex", justifyContent: "center", mb: 2 }}>
         <Button
