@@ -7,6 +7,7 @@ export interface Product {
   tags: { en: string; de: string; ja: string }[];
   image: string;
   type: string;
+  image2?: string;
 }
 
 export const getProducts = (): Product[] => [
@@ -105,6 +106,7 @@ export const getProducts = (): Product[] => [
       { en: "savory", de: "Herzhaft", ja: "風味豊か" },
       { en: "traditional", de: "Traditionell", ja: "伝統的" },
     ],
+    image2: "/natures-aroma/media/products/spice/chicken_curry_paste_2.jpeg",
   },
   {
     id: "5",
@@ -129,6 +131,7 @@ export const getProducts = (): Product[] => [
       { en: "savory", de: "Herzhaft", ja: "風味豊か" },
       { en: "aromatic", de: "Aromatisch", ja: "香り豊か" },
     ],
+    image2: "/natures-aroma/media/products/spice/fish_curry_paste_2.jpeg",
   },
   {
     id: "6",
@@ -153,6 +156,7 @@ export const getProducts = (): Product[] => [
       { en: "tangy", de: "Sauer", ja: "酸味" },
       { en: "vegetarian", de: "Vegetarisch", ja: "ベジタリアン" },
     ],
+    image2: "/natures-aroma/media/products/spice/rasam_2.jpeg",
   },
   {
     id: "7",

@@ -84,36 +84,43 @@ const ProductDetail = () => {
             </Box>
 
             {/* Product Text */}
-            <Box sx={{ flex: 1 }}>
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                flexDirection: "column",
+                minHeight: 200,
+              }}
+            >
               <Typography variant="h3" gutterBottom>
                 {product.name[lang]}
               </Typography>
+
               <Typography variant="body1" paragraph>
                 {product.description[lang]}
               </Typography>
-              {/* <Typography variant="h6">
-                {t("productDetail.price")}: ${product.price.toFixed(2)}
-              </Typography>
-              <Typography
-                variant="h6"
-                color={product.inStock ? "success.main" : "error.main"}
-              >
-                {product.inStock
-                  ? t("productDetail.inStock")
-                  : t("productDetail.outOfStock")}
-              </Typography> */}
-              {/* {product.tags.length > 0 && (
-                <Box sx={{ mt: 2, display: "flex", flexWrap: "wrap", gap: 1 }}>
-                  {product.tags.map((tag, index) => (
-                    <Chip
-                      key={index}
-                      label={tag[lang]}
-                      color="primary"
-                      variant="outlined"
-                    />
-                  ))}
+
+              {/* ⭐ Bottom-right image (only if available) */}
+              {product.image2 && (
+                <Box
+                  sx={{
+                    mt: "auto",
+                    display: "flex",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <img
+                    src={product.image2}
+                    alt="Extra view"
+                    style={{
+                      width: "100%", // adjust size if needed
+                      height: "auto",
+                      borderRadius: 8,
+                      objectFit: "cover",
+                    }}
+                  />
                 </Box>
-              )} */}
+              )}
             </Box>
           </Box>
         </Paper>
