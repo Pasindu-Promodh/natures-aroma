@@ -433,7 +433,7 @@ const Contact = () => {
                 </IconButton>
               </Tooltip>
 
-              <Tooltip title={t("contact.youtube")}>
+              {/* <Tooltip title={t("contact.youtube")}>
                 <IconButton
                   color="primary"
                   onClick={() =>
@@ -442,7 +442,7 @@ const Contact = () => {
                 >
                   <YouTubeIcon />
                 </IconButton>
-              </Tooltip>
+              </Tooltip> */}
 
               <Tooltip title={t("contact.callUs")}>
                 <IconButton color="primary" href={`tel:${phone}`}>

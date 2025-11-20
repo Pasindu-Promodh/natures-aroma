@@ -103,14 +103,14 @@ const Home = () => {
   ];
 
   return (
-    <Box sx={{ pt: { xs: 8, sm: 10 } }}>
+    <Box sx={{ pt: { xs: 2.5, sm: 3 } }}>
       {/* <Box> */}
       <motion.div
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.7 }}
       >
-        {/* <Paper elevation={3} sx={{ p: 4, textAlign: "center", mb: 6 }}> */}
+        {/* <Paper elevation={3} sx={{ p: 4, textAlign: "center", mb: 6 }}>
         <img
           src="/natures-aroma/media/Natures-landscape.png"
           alt="Nature Landscape"
@@ -119,7 +119,28 @@ const Home = () => {
             // maxWidth: "800px",
             borderRadius: "8px",
           }}
-        />
+        /> */}
+        {/* FULL-WIDTH TOP IMAGE */}
+        <Box
+          sx={{
+            width: "100vw",
+            position: "relative",
+            left: "50%",
+            right: "50%",
+            ml: "-50vw",
+            mr: "-50vw",
+          }}
+        >
+          <img
+            src="/natures-aroma/media/main.jpg"
+            alt="Nature Landscape"
+            style={{
+              width: "100vw",
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </Box>
         <Typography variant="h3" gutterBottom sx={{ mt: 2 }}>
           {t("home.title")}
         </Typography>
@@ -174,10 +195,15 @@ const Home = () => {
               >
                 <CardMedia
                   component="img"
-                  sx={{ height: "100%", objectFit: "contain" }} // image takes 70% of card height
+                  sx={{
+                    height: "100%",
+                    objectFit: "contain",
+                    p: 1, // padding around the image
+                  }}
                   image={c.image}
                   alt={c.name}
                 />
+
                 {/* <CardContent
                   sx={{
                     flexGrow: 1,

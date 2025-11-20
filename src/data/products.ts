@@ -26,6 +26,7 @@ export const getProducts = (): Product[] => [
     price: 9.99,
     inStock: true,
     image: "/natures-aroma/media/products/oil/coconut_oil.png",
+    image2: "/natures-aroma/media/products/oil/coconut_oil_2.jpg",
     type: "oil",
     tags: [
       { en: "natural", de: "Natürlich", ja: "ナチュラル" },
@@ -74,6 +75,7 @@ export const getProducts = (): Product[] => [
     price: 14.99,
     inStock: false,
     image: "/natures-aroma/media/products/spice/brinjal_moju.png",
+    image2: "/natures-aroma/media/products/spice/brinjal_moju_2.jpg",
     type: "spice",
     tags: [
       { en: "pickle", de: "Eingelegt", ja: "ピクルス" },
@@ -98,6 +100,7 @@ export const getProducts = (): Product[] => [
     price: 9.99,
     inStock: true,
     image: "/natures-aroma/media/products/spice/chicken_curry_paste.png",
+    image2: "/natures-aroma/media/products/spice/chicken_curry_paste_2.jpeg",
     type: "spice",
     tags: [
       { en: "spice", de: "Gewürz", ja: "スパイス" },
@@ -106,7 +109,6 @@ export const getProducts = (): Product[] => [
       { en: "savory", de: "Herzhaft", ja: "風味豊か" },
       { en: "traditional", de: "Traditionell", ja: "伝統的" },
     ],
-    image2: "/natures-aroma/media/products/spice/chicken_curry_paste_2.jpeg",
   },
   {
     id: "5",
@@ -123,6 +125,7 @@ export const getProducts = (): Product[] => [
     price: 14.99,
     inStock: false,
     image: "/natures-aroma/media/products/spice/fish_curry_paste.png",
+    image2: "/natures-aroma/media/products/spice/fish_curry_paste_2.jpeg",
     type: "spice",
     tags: [
       { en: "spice", de: "Gewürz", ja: "スパイス" },
@@ -131,7 +134,6 @@ export const getProducts = (): Product[] => [
       { en: "savory", de: "Herzhaft", ja: "風味豊か" },
       { en: "aromatic", de: "Aromatisch", ja: "香り豊か" },
     ],
-    image2: "/natures-aroma/media/products/spice/fish_curry_paste_2.jpeg",
   },
   {
     id: "6",
@@ -148,6 +150,7 @@ export const getProducts = (): Product[] => [
     price: 14.99,
     inStock: false,
     image: "/natures-aroma/media/products/spice/rasam.png",
+    image2: "/natures-aroma/media/products/spice/rasam_2.jpeg",
     type: "spice",
     tags: [
       { en: "soup", de: "Suppe", ja: "スープ" },
@@ -156,7 +159,6 @@ export const getProducts = (): Product[] => [
       { en: "tangy", de: "Sauer", ja: "酸味" },
       { en: "vegetarian", de: "Vegetarisch", ja: "ベジタリアン" },
     ],
-    image2: "/natures-aroma/media/products/spice/rasam_2.jpeg",
   },
   {
     id: "7",
@@ -173,6 +175,7 @@ export const getProducts = (): Product[] => [
     price: 9.99,
     inStock: true,
     image: "/natures-aroma/media/products/tea/blue_butterfly_pea_tea.png",
+    image2: "/natures-aroma/media/products/tea/blue_butterfly_pea_tea_2.jpg",
     type: "tea",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
@@ -196,7 +199,8 @@ export const getProducts = (): Product[] => [
     },
     price: 14.99,
     inStock: false,
-    image: "/natures-aroma/media/products/tea/chai_tea.png",
+    image: "/natures-aroma/media/products/tea/chai_tea.jpg",
+    image2: "/natures-aroma/media/products/tea/chai_tea_2.jpg",
     type: "tea",
     tags: [
       { en: "black tea", de: "Schwarztee", ja: "紅茶" },
@@ -221,6 +225,7 @@ export const getProducts = (): Product[] => [
     price: 14.99,
     inStock: false,
     image: "/natures-aroma/media/products/tea/ginger_tea.png",
+    image2: "/natures-aroma/media/products/tea/ginger_tea_2.jpg",
     type: "tea",
     tags: [
       { en: "tea", de: "Tee", ja: "お茶" },
@@ -245,6 +250,7 @@ export const getProducts = (): Product[] => [
     price: 14.99,
     inStock: false,
     image: "/natures-aroma/media/products/tea/mango_leaf_tea.png",
+    image2: "/natures-aroma/media/products/tea/mango_leaf_tea_2.jpg",
     type: "tea",
     tags: [
       { en: "herbal", de: "Kräuter", ja: "ハーブ" },
